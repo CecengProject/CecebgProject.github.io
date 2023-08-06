@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ucapan Ulang Tahun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            color: #FF6347;
+            font-size: 36px;
+            margin-top: 50px;
+            text-shadow: 4px 4px 6px #2198;
+        }
+        h3 {
+          color: #3768;
+          font-family: Times New Roman;
+          font-size: 22px;
+        }
+        .card1 {
+            width: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #387;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFD700;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: confetti-fall linear infinite;
+        }
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotateZ(0);
+            }
+            100% {
+                transform: translateY(100vh) rotateZ(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="card1">
+    <h1>HAPPY BIRTHDAY</h1>
+    <h3>GABRIELLA ABIGAIL</h3>
+    <img src="Ella.jpg" width="200">
+    <p></p>
+    <button class="button"><a href="Ultah.html">Klik here</a></button>
+  </div>
+    <div id="confetti-container">
+        <!-- Confetti will be added here using JavaScript -->
+    </div>
+    <script>
+        function createConfetti() {
+            const container = document.getElementById("confetti-container");
+            const colors = ["#FFD700", "#FF6347", "#7FFF00", "#40E0D0", "#FFC0CB", "#00FF00", "#FF4500"];
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement("div");
+                confetti.classList.add("confetti");
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                container.appendChild(confetti);
+            }
+        }
+
+        createConfetti();
+    </script>
+</body>
+</html>
